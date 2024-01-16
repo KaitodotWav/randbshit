@@ -9,10 +9,10 @@ guessed = []
 
 
 def clearSc():
-    try:
-        os.system("cls")
-    except:
-        os.system("clear")
+    #use this if windows
+    os.system("cls")
+    #use this if linux/macos
+    os.system("clear")
 
 print("Welcome to guess the word!\neach level has 5 tries\nbeat level 5 to win!")
 input("press enter to continue.")
@@ -25,8 +25,8 @@ for i in range(len(words)):
     for letter in words[i]:
         if letter in vowels:
             word += "_"
-        else:
-            word += letter
+            continue
+        word += letter
 
     tries = 5
     while tries > 0:
@@ -35,24 +35,22 @@ for i in range(len(words)):
         ussr = input(f"guess the word: ")
         print("\n"*5)
         clearSc()
-        if words[i] == ussr.lower():
-            correct = True
-            guessed.append(ussr)
-            break
-        else:
+        if words[i] != ussr.lower():
             if tries > 1:
                 print("Incorrect! please try again.")
             tries -= 1
-
-    if correct:
-        if i != len(words)-1:
-            print("Correct! proceed to next level.")
-
-    else:
+            continue
+        correct = True
+        guessed.append(ussr)
         break
 
+    if not correct:
+        break
+    if i != len(words)-1:
+        print("Correct! proceed to next level.")
+
 if len(guessed) == len(words):
-    input(f"{'='*5}< You Win! >{'='*5}\nCongratiolations you guessed all {len(words)} words!\npress enter to continue.")
+    input(f"{'='*5}< You Win! >{'='*5}\nCongratulations you guessed all {len(words)} words!\npress enter to continue.")
 else:
     print(f"{'='*5}< Game Over! >{'='*5}\nbetter luck next time!\nitems guessed:")
     if len(guessed) == 0:
