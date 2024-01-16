@@ -1,7 +1,8 @@
+//created by John Naoise L. Molinos
+//BC1DC
+
 import java.awt.*;
 import java.awt.event.*;
-
-
 
 public class JavCGUI extends Frame implements ActionListener {
     Button sum, diff, prod, quot;
