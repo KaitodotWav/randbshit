@@ -7,8 +7,6 @@ words = ["apple", "guitar", "mountain", "silhouette", "kaleidoscope"]
 vowels = "aeiou"
 guessed = []
 
-print("Welcome to guess the word!\neach level has 5 tries\nbeat level 5 to win!")
-
 
 def clearSc():
     try:
@@ -16,6 +14,10 @@ def clearSc():
     except:
         os.system("clear")
 
+print("Welcome to guess the word!\neach level has 5 tries\nbeat level 5 to win!")
+input("press enter to continue.")
+print("\n"*5)
+clearSc()
 
 for i in range(len(words)):
     word = ""
@@ -59,3 +61,4 @@ else:
         print(f"   {i}")
     input("press enter to continue.")
     print("\n"*5)
+    clearSc()
