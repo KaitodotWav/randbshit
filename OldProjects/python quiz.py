@@ -1,0 +1,11 @@
+#Molinos, John Naoise
+print("Computer", "programming", "is a proccess that", sep="===")
+print("involves", "writing code", " that's intended to", sep="***")
+print("perforn a", "specific action", "on a software", sep="??? ")
+print("program", "application", "or computer. This code", sep=", ")
+print("provides", "instructions on", "how the device", sep="### ")
+print("should perform.", "A programmer's", "job is to", sep="--- ")
+print("write these", "instructions, which", "involves", sep="!@! ")
+print("creating and", "testing code the", "software", sep="^^^ ")
+print("program, app,", " or computer ", "will use", sep="%%%")
+print("", "to operate", "successfully.", sep=">_<")
