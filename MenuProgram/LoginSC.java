@@ -22,6 +22,7 @@ public class LoginSC extends Frame implements ActionListener, ItemListener {
         ussrEnt.setBounds(180, 100, 200, stdH);
         passEnt = new TextField();
         passEnt.setBounds(180, 150, 200, stdH);
+        passEnt.setEchoChar('*');
         
         logBut = new Button("Login");
         logBut.setBounds(150, 230, 100, 30);
@@ -57,7 +58,7 @@ public class LoginSC extends Frame implements ActionListener, ItemListener {
             dispose();
         }
     }
-    public void itemStateChange(ItemEvent e){
+    public void itemStateChanged(ItemEvent e){
         if (e.getSource()==showPass){
             if (e.getStateChange()==1){
                 passEnt.setEchoChar((char)0);
