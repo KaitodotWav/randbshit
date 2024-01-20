@@ -9,6 +9,7 @@ guessed = []
 
 
 def clearSc():
+    print("\n"*5)
     #use this if windows
     os.system("cls")
     #use this if linux/macos
@@ -16,7 +17,6 @@ def clearSc():
 
 print("Welcome to guess the word!\neach level has 5 tries\nbeat level 5 to win!")
 input("press enter to continue.")
-print("\n"*5)
 clearSc()
 
 for i in range(len(words)):
@@ -33,7 +33,6 @@ for i in range(len(words)):
         print(f"{'='*5}< Level {i+1} >{'='*5}")
         print(f" word : {word}\n tries left : {tries}")
         ussr = input(f"guess the word: ")
-        print("\n"*5)
         clearSc()
         if words[i] != ussr.lower():
             if tries > 1:
@@ -58,5 +57,4 @@ else:
     for i in guessed:
         print(f"   {i}")
     input("press enter to continue.")
-    print("\n"*5)
     clearSc()
