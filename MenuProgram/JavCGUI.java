@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class JavCGUI extends Frame implements ActionListener {
-    Button sum, diff, prod, quot;
+    Button sum, diff, prod, quot, extBut;
     Label entL1, entL2, entL3;
     final TextField entry1, entry2, entry3;
     JavCGUI(){
@@ -35,17 +35,20 @@ public class JavCGUI extends Frame implements ActionListener {
         sum = new Button("+");
         sum.setBounds(50 ,buttH ,buttS, buttS);
         diff = new Button("-");
-        diff.setBounds(150 ,buttH ,buttS, buttS);
+        diff.setBounds(120 ,buttH ,buttS, buttS);
         prod = new Button("*");
-        prod.setBounds(250 ,buttH ,buttS, buttS);
+        prod.setBounds(190 ,buttH ,buttS, buttS);
         quot = new Button("/");
-        quot.setBounds(350 ,buttH ,buttS, buttS);
+        quot.setBounds(260 ,buttH ,buttS, buttS);
+        extBut = new Button("exit");
+        extBut.setBounds(330 ,buttH ,buttS+20, buttS);
 
-        add(sum);add(diff);add(prod);add(quot);
+        add(sum);add(diff);add(prod);add(quot);add(extBut);
         sum.addActionListener(this);
         diff.addActionListener(this);
         prod.addActionListener(this);
         quot.addActionListener(this);
+        extBut.addActionListener(this);
 
         setTitle("JavCalculatorGUI");
         setSize(500, 400);
@@ -54,6 +57,11 @@ public class JavCGUI extends Frame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
+        if (e.getSource()==extBut) {
+            dispose();
+            new MenuProg();
+        }
+        
         int ent1 = Integer.parseInt(entry1.getText());
         int ent2 = Integer.parseInt(entry2.getText());
         int result = 0;

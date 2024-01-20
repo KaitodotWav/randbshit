@@ -49,12 +49,12 @@ public class SumAve extends Frame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
-        int ent1 = Integer.parseInt(entry1.getText());
-        int ent2 = Integer.parseInt(entry2.getText());
-        int ent3 = Integer.parseInt(entry3.getText());
         int average = 0, total = 0;
 
         if (e.getSource()==sumave) {
+            int ent1 = Integer.parseInt(entry1.getText());
+            int ent2 = Integer.parseInt(entry2.getText());
+            int ent3 = Integer.parseInt(entry3.getText());
             total = ent1 + ent2 + ent3;
             average = total / 3;
         } else if (e.getSource()==exit){
