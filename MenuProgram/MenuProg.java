@@ -29,7 +29,14 @@ public class MenuProg extends Frame implements ActionListener {
         setVisible(true);
     }
     public void actionPerformed(ActionEvent e){
-    
+        if (e.getSource()==calc){
+            new JavCGUI();
+        } else if (e.getSource()==sumAve){
+            new SumAve();
+        } else if (e.getSource()==heightProg){
+            dispose();
+        } 
+        dispose();
     }
     public static void main(String[] args){
         new MenuProg();

@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=LoginSC
+comment0.target=JavCGUI
 comment1.params=
-comment1.target=LoginSC()
+comment1.target=JavCGUI()
 comment2.params=e
 comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment3.params=args
