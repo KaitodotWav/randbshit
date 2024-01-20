@@ -1,6 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
-public class LoginSC extends Frame implements ActionListener {
+public class LoginSC extends Frame implements ActionListener, ItemListener {
     Button logBut, extBut;
     Label ussrL, passL, msgBox;
     Checkbox showPass;
@@ -55,6 +55,15 @@ public class LoginSC extends Frame implements ActionListener {
             }
         } else if (e.getSource()==extBut){
             dispose();
+        }
+    }
+    public void itemStateChange(ItemEvent e){
+        if (e.getSource()==showPass){
+            if (e.getStateChange()==1){
+                passEnt.setEchoChar((char)0);
+            } else {
+                passEnt.setEchoChar('*');
+            }
         }
     }
     public static void main(String[] args){
