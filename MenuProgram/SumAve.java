@@ -5,14 +5,14 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class SumAve extends Frame implements ActionListener {
-    Button sumave, exit;
-    Label entL1, entL2, entL3, totalL;
+    Button sum, exit, aveBut;
+    Label entL1, entL2, entL3, totalL, aveL;
     final TextField entry1, entry2, entry3;
     SumAve(){
         int txtL;
         txtL = 230;
         int buttS, buttH;
-        buttS = 60; buttH = 260;
+        buttH = 280;
         
         entL1 = new Label("1st number");
         entL1.setBounds(50, 60, txtL, 30);
@@ -21,7 +21,9 @@ public class SumAve extends Frame implements ActionListener {
         entL3 = new Label("3rd number");
         entL3.setBounds(50, 180, txtL, 30);
         totalL = new Label(" ");
-        totalL.setBounds(120, 220, txtL, 30);
+        totalL.setBounds(100, 220, txtL, 30);
+        aveL = new Label(" ");
+        aveL.setBounds(100, 240, txtL, 30);
 
         entry1 = new TextField();
         entry1.setBounds(130, 60, txtL, 30);
@@ -31,16 +33,19 @@ public class SumAve extends Frame implements ActionListener {
         entry3.setBounds(130, 180, txtL, 30);
 
         add(entry1);add(entry2);add(entry3);
-        add(entL1);add(entL2);add(entL3);add(totalL);
+        add(entL1);add(entL2);add(entL3);add(totalL);add(aveL);
 
-        sumave = new Button("Sum & Average");
-        sumave.setBounds(70 ,buttH , 130, 50);
+        sum = new Button("Sum");
+        sum.setBounds(50 ,buttH , 100, 50);
+        aveBut = new Button("Average");
+        aveBut.setBounds(175 ,buttH , 100, 50);
         exit = new Button("exit");
-        exit.setBounds(210 ,buttH , 130, 50);
+        exit.setBounds(300 ,buttH , 100, 50);
 
-        add(sumave);add(exit);
-        sumave.addActionListener(this);
+        add(sum);add(exit);add(aveBut);
+        sum.addActionListener(this);
         exit.addActionListener(this);
+        aveBut.addActionListener(this);
 
         setTitle("Sum and Average");
         setSize(500, 400);
@@ -50,20 +55,25 @@ public class SumAve extends Frame implements ActionListener {
 
     public void actionPerformed(ActionEvent e){
         int average = 0, total = 0;
-
-        if (e.getSource()==sumave) {
+        if (e.getSource()==exit){
+            new MenuProg();
+            dispose();
+        } else {
             int ent1 = Integer.parseInt(entry1.getText());
             int ent2 = Integer.parseInt(entry2.getText());
             int ent3 = Integer.parseInt(entry3.getText());
-            total = ent1 + ent2 + ent3;
-            average = total / 3;
-        } else if (e.getSource()==exit){
-            new MenuProg();
-            dispose();
+            
+            String dispA = String.valueOf(average);
+            if (e.getSource()==sum) {
+                total = ent1 + ent2 + ent3;
+                String dispT = String.valueOf(total);
+                totalL.setText("the sum is "+dispT);
+            } else if (e.getSource()==aveBut){
+                average = (ent1 + ent2 + ent3) / 3;
+                String dispT = String.valueOf(average);
+                aveL.setText("the average is "+dispT);
+            }
         }
-        String dispA = String.valueOf(average);
-        String dispT = String.valueOf(total);
-        totalL.setText("the sum is "+dispT+" and the average is "+dispA);
     }
 
     public static void main(String[] args) {
