@@ -76,6 +76,8 @@ public class SumAve extends Frame implements ActionListener {
                 }
             } catch (Exception ex) {
                 //System.out.println(ex);
+                totalL.setText("oops something went wrong :< try again!");
+                aveL.setText("");
             }
         }
     }

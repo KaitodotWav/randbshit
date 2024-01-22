@@ -3,7 +3,7 @@ import java.awt.event.*;
 
 public class HSelector extends Frame implements ActionListener {
     Button ok, exit;
-    Label entL1, entL2, entL3, entL4, entL5, totalL, aveL;
+    Label entL1, entL2, entL3, entL4, entL5, disp;
     final TextField entry1, entry2, entry3, entry4, entry5;
     HSelector(){
         int txtL;
@@ -21,8 +21,8 @@ public class HSelector extends Frame implements ActionListener {
         entL4.setBounds(50, 180, txtL, 30);
         entL5 = new Label("5th number");
         entL5.setBounds(50, 220, txtL, 30);
-        aveL = new Label(" ");
-        aveL.setBounds(100, 240, txtL, 30);
+        disp = new Label(" ");
+        disp.setBounds(100, 260, txtL, 30);
 
         entry1 = new TextField();
         entry1.setBounds(130, 60, txtL, 30);
@@ -36,10 +36,10 @@ public class HSelector extends Frame implements ActionListener {
         entry5.setBounds(130, 220, txtL, 30);
 
         add(entry1);add(entry2);add(entry3);add(entry4);add(entry5);
-        add(entL1);add(entL2);add(entL3);add(entL4);add(aveL);add(entL5);
+        add(entL1);add(entL2);add(entL3);add(entL4);add(disp);add(entL5);
 
         ok = new Button("Ok");
-        ok.setBounds(50 ,buttH , 100, 50);
+        ok.setBounds(100 ,buttH , 100, 50);
         exit = new Button("exit");
         exit.setBounds(300 ,buttH , 100, 50);
 
@@ -59,24 +59,37 @@ public class HSelector extends Frame implements ActionListener {
             dispose();
         } else {
             try{
-                int ent1 = Integer.parseInt(entry1.getText());
-                int ent2 = Integer.parseInt(entry2.getText());
-                int ent3 = Integer.parseInt(entry3.getText());
-                int ent4 = Integer.parseInt(entry4.getText());
-                int ent5 = Integer.parseInt(entry5.getText());
-                String highest = "1st number is the highest : "+ent1;
-                if (num1<=num2 & num1<=num3 & num1<=num4 & num1<=num5){
-            System.out.println(num1+" is the lowest!");
-        } else if (num2<=num1 & num2<=num3 & num2<=num4 & num2<=num5){
-            System.out.println(num2+" is the lowest!");
-        } else if (num3<=num2 & num3<=num1 & num3<=num4 & num3<=num5){
-            System.out.println(num3+" is the lowest!");
-        } else if (num4<=num2 & num4<=num3 & num4<=num1 & num4<=num5){
-            System.out.println(num4+" is the lowest!");
-        } else {
-            System.out.println(num5+" is the lowest!");
-        }
+                entL1.setBackground(Color.white);
+                entL2.setBackground(Color.white);
+                entL3.setBackground(Color.white);
+                entL4.setBackground(Color.white);
+                entL5.setBackground(Color.white);
+                int num1 = Integer.parseInt(entry1.getText());
+                int num2 = Integer.parseInt(entry2.getText());
+                int num3 = Integer.parseInt(entry3.getText());
+                int num4 = Integer.parseInt(entry4.getText());
+                int num5 = Integer.parseInt(entry5.getText());
+                String highest;
+                if (num1>=num2 & num1>=num3 & num1>=num4 & num1>=num5){
+                    highest = "1st number is the highest : "+num1;
+                    entL1.setBackground(Color.yellow);
+                } else if (num2>=num1 & num2>=num3 & num2>=num4 & num2>=num5){
+                    highest = "2nd number is the highest : "+num2;
+                    entL2.setBackground(Color.yellow);
+                } else if (num3>=num2 & num3>=num1 & num3>=num4 & num3>=num5){
+                    highest = "3rd number is the highest : "+num3;
+                    entL3.setBackground(Color.yellow);
+                } else if (num4>=num2 & num4>=num3 & num4>=num1 & num4>=num5){
+                    highest = "4th number is the highest : "+num4;
+                    entL4.setBackground(Color.yellow);
+                } else {
+                    highest = "5th number is the highest : "+num5;
+                    entL5.setBackground(Color.yellow);
+                }
+                disp.setText(highest);
             } catch (Exception ex){
+                //System.out.println(ex);
+                disp.setText("Cant find the highest number, try again!");
             }
         }
     }
