@@ -9,9 +9,7 @@ public class HSelector extends Frame implements ActionListener {
         int txtL;
         txtL = 230;
         int buttS, buttH;
-        int labelX = 50, labelY=60;
-        int entryX = 130, entryY=60;
-        buttH = 280;
+        buttH = 300;
         
         entL1 = new Label("1st number");
         entL1.setBounds(50, 60, txtL, 30);
@@ -56,11 +54,22 @@ public class HSelector extends Frame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
-        int average = 0, total = 0;
         if (e.getSource()==exit){
             new MenuProg();
             dispose();
         } else {
+            try{
+                int ent1 = Integer.parseInt(entry1.getText());
+                int ent2 = Integer.parseInt(entry2.getText());
+                int ent3 = Integer.parseInt(entry3.getText());
+                int ent4 = Integer.parseInt(entry4.getText());
+                int ent5 = Integer.parseInt(entry5.getText());
+                String highest = "1st number is the highest : "+ent1;
+                if (ent2 >= 1){
+                    
+                }
+            } catch (Exception ex){
+            }
         }
     }
 
