@@ -3,22 +3,22 @@ import java.awt.event.*;
 
 public class MenuProg extends Frame implements ActionListener {
     Button calc, sumAve, heightProg, extBut;
-    int butW, butH;
+    int butX = 150;
     MenuProg(){
         calc = new Button("Calculator");
-        calc.setBounds(100, 100, 200, 30);
+        calc.setBounds(butX, 100, 200, 30);
         calc.addActionListener(this);
         
         sumAve = new Button("Sum & Average");
-        sumAve.setBounds(100, 150, 200, 30);
+        sumAve.setBounds(butX, 150, 200, 30);
         sumAve.addActionListener(this);
         
         heightProg = new Button("Heighest");
-        heightProg.setBounds(100, 200, 200, 30);
+        heightProg.setBounds(butX, 200, 200, 30);
         heightProg.addActionListener(this);
         
         extBut = new Button("Exit");
-        extBut.setBounds(100, 250, 200, 30);
+        extBut.setBounds(butX, 250, 200, 30);
         extBut.addActionListener(this);
         
         

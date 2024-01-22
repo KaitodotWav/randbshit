@@ -60,23 +60,24 @@ public class JavCGUI extends Frame implements ActionListener {
         if (e.getSource()==extBut) {
             dispose();
             new MenuProg();
-        }
-        
-        int ent1 = Integer.parseInt(entry1.getText());
-        int ent2 = Integer.parseInt(entry2.getText());
-        int result = 0;
-
-        if (e.getSource()==sum) {
-            result = ent1 + ent2;
-        } else if (e.getSource()==diff) {
-            result = ent1 - ent2;
-        } else if (e.getSource()==prod) {
-            result = ent1 * ent2;
         } else {
-            result = ent1 / ent2;
-        } 
-        String disp = String.valueOf(result);
-        entry3.setText(disp);
+            int ent1 = Integer.parseInt(entry1.getText());
+            int ent2 = Integer.parseInt(entry2.getText());
+            int result = 0;
+
+            if (e.getSource()==sum) {
+                result = ent1 + ent2;
+            } else if (e.getSource()==diff) {
+                result = ent1 - ent2;
+            } else if (e.getSource()==prod) {
+                result = ent1 * ent2;
+            } else {
+                result = ent1 / ent2;
+            }
+        
+            String disp = String.valueOf(result);
+            entry3.setText(disp);
+        }
     }
 
     public static void main(String[] args) {

@@ -63,7 +63,7 @@ public class SumAve extends Frame implements ActionListener {
         }
         String dispA = String.valueOf(average);
         String dispT = String.valueOf(total);
-        totalL.setText("the sum is "+total+" and the average is "+average);
+        totalL.setText("the sum is "+dispT+" and the average is "+dispA);
     }
 
     public static void main(String[] args) {
