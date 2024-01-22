@@ -59,19 +59,23 @@ public class SumAve extends Frame implements ActionListener {
             new MenuProg();
             dispose();
         } else {
-            int ent1 = Integer.parseInt(entry1.getText());
-            int ent2 = Integer.parseInt(entry2.getText());
-            int ent3 = Integer.parseInt(entry3.getText());
-            
-            String dispA = String.valueOf(average);
-            if (e.getSource()==sum) {
+            try {
+                int ent1 = Integer.parseInt(entry1.getText());
+                int ent2 = Integer.parseInt(entry2.getText());
+                int ent3 = Integer.parseInt(entry3.getText());
+                
                 total = ent1 + ent2 + ent3;
-                String dispT = String.valueOf(total);
-                totalL.setText("the sum is "+dispT);
-            } else if (e.getSource()==aveBut){
                 average = (ent1 + ent2 + ent3) / 3;
-                String dispT = String.valueOf(average);
-                aveL.setText("the average is "+dispT);
+                String dispA = String.valueOf(average);
+                if (e.getSource()==sum) {
+                    String dispT = String.valueOf(total);
+                    totalL.setText("the sum is "+dispT);
+                } else if (e.getSource()==aveBut){
+                    String dispT = String.valueOf(average);
+                    aveL.setText("the average is "+dispT);
+                }
+            } catch (Exception ex) {
+                //System.out.println(ex);
             }
         }
     }

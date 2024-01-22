@@ -34,7 +34,7 @@ public class MenuProg extends Frame implements ActionListener {
         } else if (e.getSource()==sumAve){
             new SumAve();
         } else if (e.getSource()==heightProg){
-            dispose();
+            new HSelector();
         } 
         dispose();
     }
